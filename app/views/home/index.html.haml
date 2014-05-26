@@ -1,0 +1,10 @@
+.hello= 'こにちは.スです'
+.container-fluid{'ng-app' => 'receta'}
+  .panel.panel-success
+    .panel-heading
+      %h1{'ng-if' => 'name'} Hello, {{name}}
+    .panel-body
+      %form.form-inline
+        .form-group
+          %input.form-control{'ng-model' => 'name', 'placeholder'=>'Enter your name',
+                              'type' => 'text', 'autofocus' => ''}
