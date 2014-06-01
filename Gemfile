@@ -40,6 +40,7 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'foreman'
+gem 'pg'
 group :production, :staging do
   gem 'rails_12factor'
   gem 'rails_stdout_logging'
