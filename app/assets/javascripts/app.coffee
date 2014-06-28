@@ -1,6 +1,6 @@
 nihongo = angular.module('nihongo', ['templates', 'ngRoute', 'controllers'])
 
-nihongo.config(($routeProvider) ->
+nihongo.config(['$routeProvider', ($routeProvider) ->
     $routeProvider
       .when('/',
         templateUrl: "index.html"
@@ -10,7 +10,7 @@ nihongo.config(($routeProvider) ->
         templateUrl: "new.html"
         controller: "NoteController"
       )
-)
+])
 
 notes = [
   {
