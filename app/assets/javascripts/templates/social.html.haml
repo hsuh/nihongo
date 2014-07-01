@@ -1,0 +1,17 @@
+%header.row
+  .col-md-3
+  .col-md-6
+    .nav-bar-container
+      %ul.nav-bar
+        %li.pull-left
+          %label.sr-only{'for' => 'keywords'}= 'Keywords'
+          %input{'ng-model' => 'keywords',
+                    'autofocus' => '',
+                    'type' => 'text',
+                    'placeholder' => '日本語'}
+          %button.pull-right.btn.btn-primary.btn-sm{'ng-click' => 'search(keywords)' }= 'Search'
+        %li.pull-left.col-md-offset-1= 'List'
+        %li.pull-left.col-md-offset-1
+          %menu
+        %li.pull-left.col-md-offset-1= 'Account'
+  .col-md-3

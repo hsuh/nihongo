@@ -1,0 +1,13 @@
+%aside.flash.row
+  %article.col-md-6.col-md-offset-3.col-sm-12{ 'active-class' => "alert",
+    "flash-alert" => '',
+    "duration" => "0"} {{ flash.message }}
+%section.col-md-6.col-md-offset-3
+  %article.panel.panel-info
+    %header.panel-heading
+      %h1 {{ note.kanji }}
+    %p.panel-body {{ note.kana }}
+    %p.panel-body {{ note.meaning }}
+
+  %button.btn.btn-default{ 'ng-click' => 'back()' }
+    &larr; Back

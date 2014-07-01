@@ -5,6 +5,8 @@
 controllers = angular.module('controllers')
 controllers.controller('IndexController', ['$scope', '$routeParams', '$location', '$resource', ($scope, $routeParams, $location, $resource) ->
   $scope.search = (keywords) -> $location.path('/').search('keywords', keywords)
+  $scope.view   = (noteId) -> $location.path("/notes/#{noteId}")
+
   Note          = $resource('/notes/:nodeId', { noteId: "@id", format: 'json' })
 
   if $routeParams.keywords

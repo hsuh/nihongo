@@ -1,1 +1,1 @@
-json.(note, :id, :kanji)
+json.(note, :id, :kanji, :kana, :phrase, :meaning)

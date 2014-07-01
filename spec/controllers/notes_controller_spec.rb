@@ -45,5 +45,29 @@ describe NotesController do
     end
   end
 
+  describe 'show' do
+    before do
+      xhr :get, :show, format: :json, id: note_id
+    end
+
+    subject(:results) { JSON.parse(response.body) }
+
+    context 'when the note exists' do
+      let(:note) {
+        Note.create!(kanji: "去年", kana: 'きょねん', meaning: 'Last year') }
+      let(:note_id){ note.id }
+
+      it { expect(response.status).to eq(200) }
+      it { expect(results['id']).to eq(note.id) }
+      it { expect(results['kanji']).to eq(note.kanji) }
+      it { expect(results['meaning']).to eq(note.meaning) }
+    end
+
+    context "when the note doesn't exist" do
+      let(:note_id) { -9999 }
+      it { expect(response.status).to eq(404) }
+    end
+  end
+
 
 end
