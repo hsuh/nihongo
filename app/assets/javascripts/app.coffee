@@ -1,4 +1,4 @@
-nihongo = angular.module('nihongo', ['templates', 'ngRoute', 'controllers'])
+nihongo = angular.module('nihongo', ['templates', 'ngResource', 'ngRoute', 'controllers', 'directives'])
 
 nihongo.config(['$routeProvider', ($routeProvider) ->
     $routeProvider
@@ -8,39 +8,27 @@ nihongo.config(['$routeProvider', ($routeProvider) ->
       )
       .when('/notes/new',
         templateUrl: "new.html"
-        controller: "NoteController"
+        controller: "NotesController"
+      )
+      .when('/graphs/social',
+        templateUrl: "social.html"
+        controller: "SocialGraphController"
       )
 ])
 
-notes = [
-  {
-    id: 1
-    name: 'Cheese'
-  },
-  {
-    id: 2
-    name: 'Garlic Mashed Potatoes',
-  },
-  {
-    id: 3
-    name: 'Garlic Mushrooms',
-  }
-]
-
 controllers = angular.module('controllers', [])
+directives  = angular.module('directives', [])
 
-controllers.controller('IndexController', ['$scope', '$routeParams', '$location', ($scope, $routeParams, $location) ->
-  $scope.search = (keywords) ->
-    $location.path('/').search('keywords', keywords)
-
-  if $routeParams.keywords
-    keywords     = $routeParams.keywords.toLowerCase()
-    $scope.notes = notes.filter (note) ->
-      note.name.toLowerCase().indexOf(keywords) != -1
-  else
-    $scope.notes = []
+controllers.controller('SocialGraphController', ['$scope', '$routeParams', '$location', (scope, routeParams, location) ->
 
 ])
-controllers.controller('NoteController', ($scope) ->)
 
+controllers.controller('NotesController', ($scope) ->)
 
+directives.directive('menu', () ->
+    return {
+        restrict : 'E',
+        template :"<a href='/graphs/social'>"+
+                  'Graph</a>'
+    }
+)

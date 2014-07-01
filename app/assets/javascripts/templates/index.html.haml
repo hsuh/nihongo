@@ -1,16 +1,50 @@
 %header.row
-  %h1.text-center.col-md-6.col-md-offset-3= 'Search'
+  .col-md-3
+  .col-md-6
+    .nav-bar-container
+      %ul.nav-bar
+        %li.pull-left
+          %label.sr-only{'for' => 'keywords'}= 'Keywords'
+          %input{'ng-model' => 'keywords',
+                    'id' => 'keywords',
+                    'autofocus' => '',
+                    'type' => 'text',
+                    'placeholder' => '日本語'}
+          %button.btn.btn-primary.btn-sm{'ng-click' => 'search(keywords)',
+                 'id' => 'search'}= 'Search'
+        %li.pull-left.col-md-offset-1= 'List'
+        %li.pull-left.col-md-offset-1
+          %a{'href' => 'graphs/social'}= 'Graph'
+        %li.pull-left.col-md-offset-1= 'Account'
+  .col-md-3
 
-%section.row
-  %form
-    .form-group.col-md-6.col-md-offset-3
-      %label.sr-only{'for' => 'keywords'}= 'Keywords'
-      %input.form-control{'ng-model' => 'keywords',
-                          'autofocus' => '',
-                          'type' => 'text',
-                          'placeholder' => '日本語'}
-    .form-group.col-md-6.col-md-offset-3.text-center
-      %button.btn.btn-primary.btn-lg{'ng-click' => 'search(keywords)' }= 'Search'
+%section.row.app-body
+  .col-md-3
+  .col-md-6
+    %form.form-horizontal{'role' => 'form'}
+      .form-group
+        %label.col-sm-2.control-label{'for' => 'inputkanji'}= 'Kanji'
+        .col-sm-6
+          %input.form-control{'type' => 'text',
+                 'id' => 'inputkanji',
+                 'placeholder' => 'Enter Kanji'}
+      .form-group
+        %label.col-sm-2.control-label{'for' => 'inputkana'}= 'Kana'
+        .col-sm-6
+          %input.form-control{'type' => 'text',
+                 'id' => 'inputkana',
+                 'placeholder' => 'Enter Kana'}
+      .form-group
+        %label.col-sm-2.control-label{'for' => 'inputphrase'}= 'Phrase'
+        .col-sm-6
+          %textarea.form-control{'type' => 'text',
+                 'id' => 'inputphrase',
+                 'placeholder' => 'Enter Phrase'}
+      .form-group
+        .col-sm-offset-2.col-sm-6
+          %button.btn.btn-primary{'type' => 'submit'}= 'Save'
+  .col-md-3
+
 %hr
 %section.row{'ng-if' => 'notes'}
   %h1.text-center.h2= 'Results'
@@ -18,7 +52,7 @@
     %li{'ng-repeat' => 'note in notes'}
       %section.well.col-md-6.col-md-offset-3
         %h1.h3.col-md-6.text-right{'style' => 'margin-top: 0'}
-          %a{'href' => '#', "ng-click" => "view(note.id)"} {{ note.name }}
+          %a{'href' => '#', "ng-click" => "view(note.id)"} {{ note.kanji }}
         .col-md-6
           %button.btn.btn-info{'ng-click' => "edit(note.id)"}= 'Edit'
           %button.btn.btn-danger{'ng-click' => "delete(note.id)"}= 'Delete'
