@@ -36,7 +36,7 @@ describe "IndexController", ->
       beforeEach(setupController())
 
       it 'defaults to no notes', ->
-        expect(scope.notes).toEqualData([])
+        expect(scope.data.notes).toEqualData([])
 
     describe 'with keywords', ->
       keywords = "foo" #find out a way to test this with kanji characters
@@ -55,7 +55,7 @@ describe "IndexController", ->
         httpBackend.flush() #resolves all asyn promises
 
       it 'calls the back-end', ->
-        expect(scope.notes).toEqualData(notes)
+        expect(scope.data.notes).toEqualData(notes)
 
   describe 'search()', ->
     beforeEach ->

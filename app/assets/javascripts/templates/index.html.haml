@@ -14,7 +14,11 @@
                  'id' => 'search'}= 'Search'
         %li.pull-left.col-md-offset-1= 'List'
         %li.pull-left.col-md-offset-1
-          %a{'href' => 'graphs/social'}= 'Graph'
+          %span.dropdown{'on-toggle' => "toggled(open)" }
+            %a.dropdown-toggle{'href' => ''}= 'Graph'
+            %ul.dropdown-menu
+              %li{'ng-repeat' => 'item in data.items'}
+                %a{'href' => '', 'ng-click' => "viewGraph(item.name)"} {{ item.name }}
         %li.pull-left.col-md-offset-1= 'Account'
   .col-md-3
 
@@ -46,10 +50,10 @@
   .col-md-3
 
 %hr
-%section.row{'ng-if' => 'notes'}
+%section.row{'ng-if' => 'data.notes'}
   %h1.text-center.h2= 'Results'
   %ul.list-unstyled
-    %li{'ng-repeat' => 'note in notes'}
+    %li{'ng-repeat' => 'note in data.notes'}
       %section.well.col-md-6.col-md-offset-3
         %h1.h3.col-md-6.text-right{'style' => 'margin-top: 0'}
           %a{'href' => '', "ng-click" => "view(note.id)"} {{ note.kanji }}

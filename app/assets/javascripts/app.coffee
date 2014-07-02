@@ -5,6 +5,7 @@ nihongo = angular.module('nihongo', [
         'controllers',
         'angular-flash.service',
         'angular-flash.flash-alert-directive',
+        'ui.bootstrap',
         'directives'])
 
 nihongo.config(['$routeProvider', 'flashProvider', ($routeProvider, flashProvider) ->

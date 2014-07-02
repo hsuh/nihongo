@@ -43,10 +43,11 @@ describe "NoteController", ->
       beforeEach(setupController())
       it 'loads the given note', ->
         httpBackend.flush()
-        expect(scope.note).toEqualData(fakeNote)
+        expect(scope.data.note).toEqualData(fakeNote)
+
     describe 'note is not found', ->
       beforeEach(setupController(false))
       it 'loads the given note', ->
         httpBackend.flush()
-        expect(scope.note).toBe(null)
+        expect(scope.data.note).toBe(null)
         expect(flash.error).toBe("There is no note with ID #{noteId}")

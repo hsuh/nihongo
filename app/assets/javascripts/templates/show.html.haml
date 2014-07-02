@@ -5,9 +5,9 @@
 %section.col-md-6.col-md-offset-3
   %article.panel.panel-info
     %header.panel-heading
-      %h1 {{ note.kanji }}
-    %p.panel-body {{ note.kana }}
-    %p.panel-body {{ note.meaning }}
+      %h1 {{ data.note.kanji }}
+    %p.panel-body {{ data.note.kana }}
+    %p.panel-body {{ data.note.meaning }}
 
   %button.btn.btn-default{ 'ng-click' => 'back()' }
     &larr; Back
