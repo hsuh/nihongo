@@ -1,0 +1,16 @@
+!!!
+%html
+%head
+  %title= "Nihongo"
+  = stylesheet_link_tag 'application', media: 'all'
+  = javascript_include_tag 'application', media: 'all'
+  = csrf_meta_tags
+%body{'ng-app' => 'nihongo'}
+  %header
+    .content
+      = render partial: 'shared/navigation'
+  %section.row.app-body
+    .content
+      = render partial: 'shared/flash_messages'
+      = yield
+  = render partial: 'shared/footer'

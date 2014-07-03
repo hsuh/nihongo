@@ -1,0 +1,26 @@
+%section.row.app-body
+  .col-md-3
+  .col-md-6
+    %form.form-horizontal{'role' => 'form'}
+      .form-group
+        %label.col-sm-2.control-label{'for' => 'inputkanji'}= 'Kanji'
+        .col-sm-6
+          %input.form-control{'type' => 'text',
+                 'id' => 'inputkanji',
+                 'placeholder' => 'Enter Kanji'}
+      .form-group
+        %label.col-sm-2.control-label{'for' => 'inputkana'}= 'Kana'
+        .col-sm-6
+          %input.form-control{'type' => 'text',
+                 'id' => 'inputkana',
+                 'placeholder' => 'Enter Kana'}
+      .form-group
+        %label.col-sm-2.control-label{'for' => 'inputphrase'}= 'Phrase'
+        .col-sm-6
+          %textarea.form-control{'type' => 'text',
+                 'id' => 'inputphrase',
+                 'placeholder' => 'Enter Phrase'}
+      .form-group
+        .col-sm-offset-2.col-sm-6
+          %button.btn.btn-primary{'type' => 'submit'}= 'Save'
+  .col-md-3

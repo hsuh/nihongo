@@ -1,4 +1,4 @@
-describe "IndexController", ->
+describe "NotesController", ->
   scope       = null
   ctrl        = null
   location    = null
@@ -20,7 +20,7 @@ describe "IndexController", ->
         request = new RegExp("\/notes.*keywords=#{keywords}")
         httpBackend.expectGET(request).respond(results)
 
-      ctrl = $controller('IndexController',
+      ctrl = $controller('NotesController',
                         $scope: scope,
                         $location: location)
     )
@@ -64,5 +64,5 @@ describe "IndexController", ->
     it 'redirects to itself with a keyword param', ->
       keywords = '今年'
       scope.search(keywords)
-      expect(location.path()).toBe("/")
+      expect(location.path()).toBe("/notes")
       expect(location.search()).toEqualData({keywords: keywords})

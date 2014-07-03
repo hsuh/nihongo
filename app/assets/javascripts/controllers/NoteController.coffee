@@ -2,7 +2,7 @@ controllers = angular.module('controllers')
 controllers.controller('NoteController', ['$scope','$routeParams', '$resource', 'flash', '$location', ($scope, $routeParams, $resource, flash, $location) ->
 
   $scope.data   = {}
-  $scope.back   = -> $location.path("/")
+  $scope.back   = -> $location.path("/notes")
 
   Note = $resource('/notes/:noteId', { noteId: "@id", format: 'json' })
 
