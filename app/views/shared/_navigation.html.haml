@@ -13,7 +13,7 @@
           %button.btn.btn-primary.btn-sm{'ng-click' => 'search(keywords)',
                  'id' => 'search'}= 'Search'
         %li.pull-left.col-md-offset-1{'ng-controller' => 'MenuItemsController'}
-          %a{'href' => '', 'ng-click' => 'showForm()'}= "New Note"
+          %a{'href' => '', 'ng-click' => 'newNote()'}= "New Note"
         %li.pull-left.col-md-offset-1= 'List'
         %li.pull-left.col-md-offset-1{'ng-controller' => 'MenuItemsController'}
           %span.dropdown{'on-toggle' => "toggled(open)" }

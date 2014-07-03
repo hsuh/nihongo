@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'home#index'
-  resources :notes, only: [:index, :show]
+  resources :notes, only: [:index, :show, :create]
   resources :graphs do
     collection do
       get 'social'

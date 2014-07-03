@@ -19,13 +19,13 @@ nihongo.config(['$routeProvider', 'flashProvider', ($routeProvider, flashProvide
        templateUrl: "results.html"
        controller: "NotesController"
       )
+      .when('/notes/new',
+        templateUrl: "form.html"
+        controller: "NoteController"
+      )
       .when('/notes/:noteId',
         templateUrl: "show.html"
         controller: "NoteController"
-      )
-      .when('/notes/new',
-        templateUrl: "form.html"
-        controller: "FormController"
       )
       .when('/graphs/social',
         templateUrl: "social.html"

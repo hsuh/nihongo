@@ -69,5 +69,17 @@ describe NotesController do
     end
   end
 
+  describe 'create' do
+    before do
+      xhr :post, :create, format: :json, note: {kanji: "去年",
+                                                 kana: 'きょねん',
+                                                 meaning: 'Last year'}
+    end
+
+    it { expect(response.status).to eq(201) }
+    it { expect(Note.last.kanji).to eq("去年") }
+    it { expect(Note.last.meaning).to eq("Last year") }
+  end
+
 
 end

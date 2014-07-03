@@ -8,6 +8,6 @@ controllers.controller('MenuItemsController', ['$scope', '$location', '$resource
     if type == 'Social'
       $location.path("/graphs/social")
 
-  $scope.showForm = () ->
+  $scope.newNote = () ->
     $location.path("/notes/new")
 ])

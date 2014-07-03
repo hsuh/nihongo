@@ -1,26 +1,40 @@
 %section.row.app-body
   .col-md-3
   .col-md-6
+    %aside.flash.row
+      %article{"flash-alert" => '', "duration"=>"0", "active-class"=>"alert"}
+      {{flash.message}}
+    %h3= 'Create a New Note'
     %form.form-horizontal{'role' => 'form'}
       .form-group
-        %label.col-sm-2.control-label{'for' => 'inputkanji'}= 'Kanji'
+        %label.col-sm-2.control-label{'for' => 'kanji'}= 'Kanji'
         .col-sm-6
           %input.form-control{'type' => 'text',
-                 'id' => 'inputkanji',
+                 'id' => 'kanji',
+                 'ng-model' => 'data.note.kanji',
                  'placeholder' => 'Enter Kanji'}
       .form-group
-        %label.col-sm-2.control-label{'for' => 'inputkana'}= 'Kana'
+        %label.col-sm-2.control-label{'for' => 'kana'}= 'Kana'
         .col-sm-6
           %input.form-control{'type' => 'text',
-                 'id' => 'inputkana',
+                 'id' => 'kana',
+                 'ng-model' => 'data.note.kana',
                  'placeholder' => 'Enter Kana'}
       .form-group
-        %label.col-sm-2.control-label{'for' => 'inputphrase'}= 'Phrase'
+        %label.col-sm-2.control-label{'for' => 'phrase'}= 'Phrase'
         .col-sm-6
           %textarea.form-control{'type' => 'text',
-                 'id' => 'inputphrase',
+                 'id' => 'phrase',
+                 'ng-model' => 'data.note.phrase',
                  'placeholder' => 'Enter Phrase'}
       .form-group
+        %label.col-sm-2.control-label{'for' => 'meaning'}= 'Meaning'
+        .col-sm-6
+          %textarea.form-control{'type' => 'text',
+                 'id' => 'meaning',
+                 'ng-model' => 'data.note.meaning',
+                 'placeholder' => 'Enter Meaning'}
+      .form-group
         .col-sm-offset-2.col-sm-6
-          %button.btn.btn-primary{'type' => 'submit'}= 'Save'
+          %button.btn.btn-primary{'ng-click' => 'save()'}= 'Save'
   .col-md-3
