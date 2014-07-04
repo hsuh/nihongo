@@ -10,3 +10,18 @@ ul.nav-bar {
 .app-body {
   margin-top: 20px;
 }
+
+#new-note {
+  .form-group {
+    display: inline-block;
+  }
+
+  input.form-control {
+    height: 26px;
+    padding: 0px;
+  }
+
+  button.btn-sm {
+    padding: 3px 10px;
+  }
+}

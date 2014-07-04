@@ -4,14 +4,18 @@
     .nav-bar-container
       %ul.nav-bar
         %li.pull-left
-          %label.sr-only{'for' => 'keywords'}= 'Keywords'
-          %input{'ng-model' => 'keywords',
-                    'id' => 'keywords',
-                    'autofocus' => '',
-                    'type' => 'text',
-                    'placeholder' => '日本語'}
-          %button.btn.btn-primary.btn-sm{'ng-click' => 'search(keywords)',
-                 'id' => 'search'}= 'Search'
+          %form#new-note
+            .form-group
+              %label.sr-only{'for' => 'keywords'}= 'Keywords'
+              %input.form-control{'ng-model' => 'keywords',
+                        'name' => 'keywords',
+                        'id' => 'keywords',
+                        'autofocus' => '',
+                        'type' => 'text',
+                        'placeholder' => '日本語'}
+            .form-group
+              %button.btn.btn-primary.btn-sm{'ng-click' => 'search(keywords)',
+                     'id' => 'search'}= 'Search'
         %li.pull-left.col-md-offset-1{'ng-controller' => 'MenuItemsController'}
           %a{'href' => '', 'ng-click' => 'newNote()'}= "New Note"
         %li.pull-left.col-md-offset-1= 'List'
