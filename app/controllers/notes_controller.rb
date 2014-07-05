@@ -5,7 +5,7 @@ class NotesController < ApplicationController
     @notes = if params[:keywords]
                Note.where('kanji ilike ? ', "%#{params[:keywords]}%")
              else
-               []
+               Note.all
              end
   end
 

@@ -1,0 +1,11 @@
+%h1.h3= 'Notes'
+%div{'masonry' => ''}
+  .masonry-brick.card{'ng-repeat' => 'note in data.notes'}
+    %div.card-inner
+      %h1.h3{'style' => 'margin-top: 0'}
+        %a{'href' => '', "ng-click" => "view(note.id)"} {{ note.kanji }}
+      %span {{note.kana}} </br>
+      %span {{note.phrase | limitTo:10}} </br>
+      %span {{note.meaning | limitTo:10}} </br>
+      %button.btn.btn-info{'ng-click' => "edit(note.id)"}= 'Edit'
+      %button.btn.btn-danger{'ng-click' => "delete(note.id)"}= 'Delete'

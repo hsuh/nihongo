@@ -6,6 +6,7 @@ nihongo = angular.module('nihongo', [
         'angular-flash.service',
         'angular-flash.flash-alert-directive',
         'ui.bootstrap',
+        'wu.masonry',
         'directives'])
 
 nihongo.config(['$routeProvider', 'flashProvider', ($routeProvider, flashProvider) ->
@@ -16,7 +17,7 @@ nihongo.config(['$routeProvider', 'flashProvider', ($routeProvider, flashProvide
 
     $routeProvider
       .when('/notes',
-       templateUrl: "results.html"
+       templateUrl: "notes.html"
        controller: "NotesController"
       )
       .when('/notes/new',

@@ -12,5 +12,5 @@ controllers.controller('NotesController', ['$scope', '$routeParams', '$location'
   if $routeParams.keywords
     Note.query(keywords: $routeParams.keywords, (results) -> $scope.data.notes = results)
   else
-    $scope.data.notes = []
+    Note.query((results) -> $scope.data.notes = results)
 ])

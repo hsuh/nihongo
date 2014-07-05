@@ -19,5 +19,6 @@
 //= require angular-resource/angular-resource
 //= require angular-flash/dist/angular-flash
 //= require angular-bootstrap/ui-bootstrap
+//= require angular-masonry/angular-masonry
 //= require_tree ./templates
 //= require_tree .
