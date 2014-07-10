@@ -1,6 +1,6 @@
 directives  = angular.module('directives')
 directives.directive('graphSettingsDirective', () ->
-  ctrl = ($scope) ->
+  ctrl = (['$scope', ($scope) ->
     $scope.data                = {}
     $scope.data.show_renderers = false
     $scope.data.show_clusters  = false
@@ -29,6 +29,7 @@ directives.directive('graphSettingsDirective', () ->
     $scope.update_graph_layout = (r) ->
       $scope.network.renderer = r
       $scope.network.update_layout($scope.network)
+   ])
 
   link = (scope, el, attr) ->
     scope.$watch('network', (network) ->
