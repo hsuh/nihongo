@@ -5,6 +5,6 @@ feature "Viewing a social graph", js: true do
     visit '/'
     click_on "Graph"
     click_on "Social"
-    expect(page).to have_content("Social Network Graph")
+    expect(page).to have_content("Graph")
   end
 end
