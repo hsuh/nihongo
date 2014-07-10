@@ -4,7 +4,7 @@ feature 'listing notes', js: true do
   scenario 'clicking on all notes' do
     visit '/'
     click_on 'List'
-    click_on 'All Notes'
+    click_on 'All'
     expect(page).to have_content('All Notes')
   end
 end

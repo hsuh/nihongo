@@ -1,0 +1,37 @@
+%div{'ng-switch on'=>'network.toolbar_selection'}
+  %div.all-clusters{'ng-switch-when'=>'all_clusters'}
+    %ul.bar-right.bar-items
+      %li
+        %a.bar-btn{'ng-click' => 'show_clusters_dropdown()',
+                   'title' => 'Select different clusters of members',
+                   'ng-class' => "{blurred: data.blurred}"}
+          %span.glyph-icons.clusters-icon
+          %p{'ng-model' => 'network.selected_cluster'} {{ network.selected_cluster.name}}
+          %span.caret
+        %div.bar-dropdown{'ng-show' => 'data.show_clusters'}
+          %ul
+            %li{'ng-repeat' => 'c in network.cluster_data.clusters'}
+              %a{'ng-click' => 'select_cluster(c)',
+                 'ng-model' => 'network.selected_cluster'} {{ c.name }}
+      %li
+        %a.bar-btn{'ng-click' => 'show_renderers_dropdown()',
+                   'title' => 'Select layout in which to show data',
+                   'ng-class' => "{blurred: data.blurred}"}
+          %span.glyph-icons{'ng-class' => "network.renderer"}
+          %p{'ng-model' => 'network.renderer'} {{ network.renderer }}
+          %span.caret
+        %div.bar-dropdown{'ng-show' => 'data.show_renderers'}
+          %ul
+            %li{'ng-repeat' => 'r in network.renderers'}
+              %a{'ng-click' => 'update_graph_layout(r)',
+                 'ng-model' => 'network.renderer'} {{ r }}
+      %li
+        %a.bar-btn-gear{'ng-click' => 'toggle_settings()',
+                   'title' => 'Click to toggle settings',
+                   'ng-class' => "{blurred: data.blurred}"}
+          %span.glyph-icons.gears-icon
+
+  %div.inside-clusters{'ng-switch-when' => 'inside_cluster'}
+    %div= 'Hello inside cluster'
+  %div.default{'ng-switch-default' => ''}
+    %div= 'default'

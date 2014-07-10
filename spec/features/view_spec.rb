@@ -18,8 +18,9 @@ feature "Viewing a note", js: true do
 
     click_on "Back"
 
+    expect(page).to     have_content('きょねん')
     expect(page).to     have_content("今年 去年")
-    expect(page).to_not have_content('きょねん')
+    expect(page).to_not have_content('雨の日')
   end
 end
 

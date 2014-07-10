@@ -1,2 +1,11 @@
 %h3= 'Social Network Graph'
+.graph-container
+  .graph-settings{'graph-settings-directive' => '',
+                  'ng-model' => 'data.network',
+                  'network' => 'data.network'}
+
+  #graph.graph{'graph-directive' => '',
+         'ng-model' => 'data.network',
+         'network' => 'data.network'}
+
 

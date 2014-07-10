@@ -1,0 +1,13 @@
+%li.pull-left
+  %form#new-note
+    .form-group
+      %label.sr-only{'for' => 'keywords'}= 'Keywords'
+      %input.form-control{'ng-model' => 'keywords',
+                'name' => 'keywords',
+                'id' => 'keywords',
+                'autofocus' => '',
+                'type' => 'text',
+                'placeholder' => '日本語'}
+    .form-group
+      %button.btn.btn-primary.btn-sm{'ng-click' => 'search(keywords)',
+             'id' => 'search'}= 'Search'

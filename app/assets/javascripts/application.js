@@ -17,8 +17,9 @@
 //= require angular-rails-templates
 //= require angular-route/angular-route
 //= require angular-resource/angular-resource
+//= require angular-animate/angular-animate
 //= require angular-flash/dist/angular-flash
 //= require angular-bootstrap/ui-bootstrap
-//= require angular-masonry/angular-masonry
+//= require d3/d3
 //= require_tree ./templates
 //= require_tree .

@@ -3,27 +3,10 @@
   .col-md-6
     .nav-bar-container
       %ul.nav-bar
-        %li.pull-left
-          %form#new-note
-            .form-group
-              %label.sr-only{'for' => 'keywords'}= 'Keywords'
-              %input.form-control{'ng-model' => 'keywords',
-                        'name' => 'keywords',
-                        'id' => 'keywords',
-                        'autofocus' => '',
-                        'type' => 'text',
-                        'placeholder' => '日本語'}
-            .form-group
-              %button.btn.btn-primary.btn-sm{'ng-click' => 'search(keywords)',
-                     'id' => 'search'}= 'Search'
+        = render partial: "shared/search_form"
         %li.pull-left.col-md-offset-1{'ng-controller' => 'MenuItemsController'}
           %a{'href' => '', 'ng-click' => 'newNote()'}= "New Note"
-        %li.pull-left.col-md-offset-1= 'List'
-        %li.pull-left.col-md-offset-1{'ng-controller' => 'MenuItemsController'}
-          %span.dropdown{'on-toggle' => "toggled(open)" }
-            %a.dropdown-toggle{'href' => ''}= 'Graph'
-            %ul.dropdown-menu
-              %li{'ng-repeat' => 'item in data.items'}
-                %a{'href' => '', 'ng-click' => "viewGraph(item.name)"} {{ item.name }}
+        = render partial: "shared/lists"
+        = render partial: "shared/graphs"
         %li.pull-left.col-md-offset-1= 'Account'
   .col-md-3

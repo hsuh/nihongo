@@ -16,8 +16,14 @@ describe "NotesController", ->
       routeParams.keywords = keywords
 
 
-      if results
+      if results && keywords == ""
+        request = new RegExp("\/notes")
+        httpBackend.expectGET(request).respond(results)
+      else if results
         request = new RegExp("\/notes.*keywords=#{keywords}")
+        httpBackend.expectGET(request).respond(results)
+      else
+        request = new RegExp("\/notes")
         httpBackend.expectGET(request).respond(results)
 
       ctrl = $controller('NotesController',
@@ -33,10 +39,27 @@ describe "NotesController", ->
 
   describe 'controller initialization', ->
     describe 'when no keywords present', ->
-      beforeEach(setupController())
+      keywords = ""
+      notes = [
+        {
+          id: 2
+          kanji: "foo bar"
+        },
+        {
+          id: 4
+          kanji: "foo fez"
+        },
+        {
+          id: 5
+          kanji: "booey"
+        }
+      ]
+      beforeEach ->
+        setupController(keywords, notes)
+        httpBackend.flush() #resolves all asyn promises
 
-      it 'defaults to no notes', ->
-        expect(scope.data.notes).toEqualData([])
+      it 'calls the back-end and return all notes', ->
+        expect(scope.data.notes).toEqualData(notes)
 
     describe 'with keywords', ->
       keywords = "foo" #find out a way to test this with kanji characters
@@ -60,6 +83,7 @@ describe "NotesController", ->
   describe 'search()', ->
     beforeEach ->
       setupController()
+      httpBackend.flush() #resolves all asyn promises
 
     it 'redirects to itself with a keyword param', ->
       keywords = '今年'

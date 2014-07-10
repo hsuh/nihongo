@@ -3,11 +3,10 @@ nihongo = angular.module('nihongo', [
         'ngResource',
         'ngRoute',
         'controllers',
+        'directives',
         'angular-flash.service',
         'angular-flash.flash-alert-directive',
-        'ui.bootstrap',
-        'wu.masonry',
-        'directives'])
+        'ui.bootstrap'])
 
 nihongo.config(['$routeProvider', 'flashProvider', ($routeProvider, flashProvider) ->
     flashProvider.errorClassnames.push("alert-danger")
@@ -36,3 +35,4 @@ nihongo.config(['$routeProvider', 'flashProvider', ($routeProvider, flashProvide
 
 controllers = angular.module('controllers', [])
 directives  = angular.module('directives', [])
+

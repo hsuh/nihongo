@@ -4,10 +4,11 @@
     "angular": "latest",
     "angular-route": "latest",
     "angular-resource": "latest",
+    "angular-animate": "latest",
     "angular-mocks": "latest",
     "bootstrap-sass-official": "latest",
     "angular-bootstrap": "latest",
     "angular-flash": "latest",
-    "angular-masonry": "latest"
+    "d3": "latest"
   }
 }

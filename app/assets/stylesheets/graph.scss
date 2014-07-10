@@ -1,0 +1,116 @@
+.graph-container .graph-settings {
+  display: block;
+  top: 0;
+  width: 660px;
+  position: absolute;
+
+  ul.bar-right {
+    list-style: none outside none;
+    float: right;
+    margin: 3px;
+    padding: 0;
+  }
+  .bar-items > li {
+    float: left;
+    list-style: none outside none;
+    margin: 0 3px 0 0;
+    position: relative;
+    z-index: 2;
+  }
+
+  .bar-items > li a {
+    cursor: pointer;
+    border-top: 1px solid #ddd;
+    float: left;
+    padding: 0 10px;
+    text-decoration: none;
+    line-height: 37px;
+  }
+
+  .bar-items > li a:hover {
+    border-top: 1px solid #09c;
+  }
+
+  .bar-items > li a.blurred {
+    opacity: 0.3;
+  }
+
+  .bar-items > li a p {
+    display: inline-block;
+  }
+  .bar-items > li a span {
+    margin-bottom: 2px;
+ }
+  .bar-items > li a span.glyph-icons {
+    background-position: left center;
+    padding: 0 0 0 27px;
+  }
+  .bar-items > li a span.clusters-icon {
+    background: url('glyphicons_043_group.png') no-repeat;
+    background-size: 25px auto;
+  }
+  .bar-items > li a span.pie {
+    background: url('glyphicons_042_pie_chart.png') no-repeat;
+    background-size: 19px auto;
+  }
+  .bar-items > li a span.force-basic {
+    background: url('glyphicons_308_share_alt.png') no-repeat;
+    background-size: 17px auto;
+  }
+  .bar-items > li a span.force-cola {
+    background: url('glyphicons_308_share_alt.png') no-repeat;
+    background-size: 18px auto;
+  }
+  .bar-items > li a span.gears-icon {
+    background: url('glyphicons_136_cogwheel.png') no-repeat;
+    background-size: 19px auto;
+  }
+
+  .bar-dropdown:after {
+    border-bottom: 7px solid #ddd;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    content: "";
+    height: 0;
+    position: absolute;
+    right: 8px;
+    top: -7px;
+    width: 0;
+  }
+  .bar-dropdown {
+    border: 1px solid #ccc;
+    position: absolute;
+    right: 0;
+    top: 42px;
+    z-index: 2;
+  }
+
+  .bar-dropdown ul {
+    list-style: none outside none;
+    min-width: 120px;
+    overflow: hidden;
+    padding: 0;
+  }
+  .bar-dropdown li a {
+    cursor: pointer;
+    display: block;
+    border-top: medium none;
+    padding: 4px 10px;
+    width: 100%;
+  }
+  .bar-dropdown li a:hover {
+    background-color: #ddd;
+    border-top: medium none;
+    color: #000;
+  }
+}
+
+.graph-container {
+  border: 1px solid #ccc;
+  position: relative;
+}
+
+.graph svg {
+  position: relative;
+  left: 20%;
+}
