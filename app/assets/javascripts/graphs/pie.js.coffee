@@ -11,6 +11,7 @@ d3.pie  = pie = () ->
   click_count = 0
   expand      = {}
   radius      = Math.min(width, height) /2
+  tooltips    = null
   #force_graph    = d3.inner_force_graph()
   slice_selected = false
   selection = ''
@@ -111,5 +112,10 @@ d3.pie  = pie = () ->
         .attr("dy", ".35em")
         .attr("display", "none")
         .text((d,i) -> return d.data.user_count)
+
+    tooltips = d3.selectAll('path')
+      .append('title')
+        .classed('tooltip', true)
+        .text(() -> return 'Double click to see inside cluster')
 
   return my_chart

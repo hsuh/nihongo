@@ -2,6 +2,7 @@ nihongo = angular.module('nihongo', [
         'templates',
         'ngResource',
         'ngRoute',
+        'ngAnimate',
         'controllers',
         'directives',
         'angular-flash.service',

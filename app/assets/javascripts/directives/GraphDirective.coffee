@@ -28,11 +28,22 @@ directives.directive('graphDirective', () ->
       return
 
     #update layout for the same data
+    #called from graph settings directive
     update_layout = (network) ->
       graph                 = renderer.type(network.renderer)
       network.current_graph = graph
       graph().config(el[0], network, scope.funcs).render()
       #remove previous svg
+      $('#graph').children()[0].remove()
+      return
+
+    #render graph for all clusters
+    show_all_clusters = () ->
+      graph = renderer.type('pie')
+      graph().config(el[0], scope.network, scope.funcs).render()
+      scope.network.current_graph     = graph
+      scope.network.selected_cluster  = {}
+      scope.network.toolbar_selection = 'all_clusters'
       $('#graph').children()[0].remove()
       return
 
@@ -42,6 +53,7 @@ directives.directive('graphDirective', () ->
       graph                      = renderer.type('pie')
       network.current_graph      = graph
       network.update_layout      = update_layout
+      network.show_all_clusters  = show_all_clusters
       graph().config(el[0],network, scope.funcs).render()
     )
 

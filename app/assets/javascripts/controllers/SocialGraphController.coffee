@@ -11,6 +11,7 @@ controllers.controller('SocialGraphController', ['$scope', '$resource', 'flash',
                   cluster_data: data_prep.prepareData(),
                   current_graph: '',
                   selected_cluster: '',
+                  show_all_clusters: '',
                   renderers: ['pie', 'force-basic', 'force-cola'],
                   renderer: 'pie',
                   toolbar_selection: 'all_clusters'

@@ -13,7 +13,7 @@ d3.force_cola  = force_cola = () ->
   color     = d3.scale.category10()
   graphProp = window.graph.graph_prop()
   graphProp.dr(15)
-  width = 500; height=400; forceWidth=500; forceHeight=350
+  width = 650; height=400; forceWidth=500; forceHeight=350
 
   linkArc = (d) ->
     sourceX = d.source.x; sourceY = d.source.y

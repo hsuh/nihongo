@@ -15,7 +15,7 @@ d3.in_force_cola  = in_force_cola = () ->
   color   = {0:"#8bb9d0",1:"#659941" ,2:"#ea9639", 3: "#cb6698", 4: "#036597", 5: "#BC5D58", 6: "#BAB86C"}
   graphProp = window.graph.graph_prop()
   graphProp.dr(15)
-  width = 500; height=400; forceWidth=500; forceHeight=400
+  width = 650; height=400; forceWidth=500; forceHeight=400
 
   transform  = (d) ->
     max_dx = Math.max(r, Math.min(width - r, d.x))

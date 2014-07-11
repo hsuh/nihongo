@@ -8,7 +8,7 @@ d3.force_basic  = force_basic = () ->
   svg         = null; nodes=null; link=null; texts=null
   links_group = null; nodes_group = null; texts_group = null
   paths_group =null; paths=null; node_clicked = null
-  width = 500; height=400; forceWidth=500; forceHeight=350
+  width = 650; height=400; forceWidth=500; forceHeight=350
 
   force     = null
   color     = d3.scale.category10()

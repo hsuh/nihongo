@@ -10,6 +10,12 @@
     margin: 3px;
     padding: 0;
   }
+  ul.bar-left {
+    list-style: none outside none;
+    float: left;
+    margin: 3px;
+    padding: 0;
+  }
   .bar-items > li {
     float: left;
     list-style: none outside none;
@@ -65,6 +71,10 @@
     background: url(asset-path('glyphicons_136_cogwheel.png')) no-repeat;
     background-size: 16px auto;
   }
+  .bar-items > li a span.back-icon {
+    background: url(asset-path('glyphicons_435_back.png')) no-repeat;
+    background-size: 16px auto;
+  }
 
   .bar-dropdown:after {
     border-bottom: 7px solid #ddd;
@@ -111,6 +121,8 @@
 }
 
 .graph svg {
-  position: relative;
-  left: 20%;
+  //position: relative;
+  //left: 20%;
+  display: block;
+  margin: auto;
 }
