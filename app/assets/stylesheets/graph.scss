@@ -46,23 +46,23 @@
     padding: 0 0 0 27px;
   }
   .bar-items > li a span.clusters-icon {
-    background: url('glyphicons_043_group.png') no-repeat;
+    background: url(asset-path('glyphicons_043_group.png')) no-repeat;
     background-size: 25px auto;
   }
   .bar-items > li a span.pie {
-    background: url('glyphicons_042_pie_chart.png') no-repeat;
+    background: url(asset-path('glyphicons_042_pie_chart.png')) no-repeat;
     background-size: 19px auto;
   }
   .bar-items > li a span.force-basic {
-    background: url('glyphicons_308_share_alt.png') no-repeat;
+    background: url(asset-path('glyphicons_308_share_alt.png')) no-repeat;
     background-size: 17px auto;
   }
   .bar-items > li a span.force-cola {
-    background: url('glyphicons_308_share_alt.png') no-repeat;
+    background: url(asset-path('glyphicons_308_share_alt.png')) no-repeat;
     background-size: 18px auto;
   }
   .bar-items > li a span.gears-icon {
-    background: url('glyphicons_136_cogwheel.png') no-repeat;
+    background: url(asset-path('glyphicons_136_cogwheel.png')) no-repeat;
     background-size: 16px auto;
   }
 
