@@ -26,7 +26,7 @@
 
   .bar-items > li a {
     cursor: pointer;
-    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
     float: left;
     padding: 0 10px;
     text-decoration: none;
@@ -34,7 +34,7 @@
   }
 
   .bar-items > li a:hover {
-    border-top: 1px solid #09c;
+    border-bottom: 1px solid #09c;
   }
 
   .bar-items > li a.blurred {
@@ -43,6 +43,7 @@
 
   .bar-items > li a p {
     display: inline-block;
+    margin: 0px;
   }
   .bar-items > li a span {
     margin-bottom: 2px;
@@ -104,13 +105,13 @@
   .bar-dropdown li a {
     cursor: pointer;
     display: block;
-    border-top: medium none;
+    border-bottom: medium none;
     padding: 4px 10px;
     width: 100%;
   }
   .bar-dropdown li a:hover {
     background-color: #ddd;
-    border-top: medium none;
+    border-bottom: medium none;
     color: #000;
   }
 }
