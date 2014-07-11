@@ -71,6 +71,12 @@ d3.pie  = pie = () ->
     funcs = _funcs
     return this
 
+  my_chart.reposition = (direction) ->
+    if direction == 'down'
+      d3.select('svg').style('margin-top', '50px')
+    if direction == 'up'
+      d3.select('svg').style('margin-top', '0px')
+
   my_chart.render = () ->
     if(!data) then return
     data.update_chart = updatePie

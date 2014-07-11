@@ -29,8 +29,6 @@ directives.directive('graphDirective', () ->
 
     #update layout for the same data
     update_layout = (network) ->
-      console.log('network...', network)
-      console.log('funcs...', scope.funcs)
       graph                 = renderer.type(network.renderer)
       network.current_graph = graph
       graph().config(el[0], network, scope.funcs).render()

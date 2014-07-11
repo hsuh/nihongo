@@ -19,6 +19,10 @@ directives.directive('graphSettingsDirective', () ->
       $scope.data.blurred = !$scope.data.blurred
       $scope.data.show_clusters  = false
       $scope.data.show_renderers = false
+      if $scope.data.blurred
+        $scope.network.current_graph().reposition('up')
+      else
+        $scope.network.current_graph().reposition('down')
 
     #update when a cluster option is clicked
     #on the dropdown
