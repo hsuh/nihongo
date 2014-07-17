@@ -1,6 +1,8 @@
 %li.pull-left.col-md-offset-1{'ng-controller'=>'MenuItemsController'}
   %span.dropdown{'on-toggle' => "toggled(open)"}
-    %a.dropdown-toggle{'href' => ''}= 'List'
-    %ul.dropdown-menu
+    %a.dropdown-toggle{'href' => ''}
+      %span= 'List'
+      %span.caret
+    %ul.dropdown-menu.list-dd-menu
       %li{'ng-repeat' => 'item in data.list'}
         %a{'href' =>'', 'ng-click' => 'viewList(item)'} {{ item }}

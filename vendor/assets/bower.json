@@ -9,6 +9,7 @@
     "bootstrap-sass-official": "latest",
     "angular-bootstrap": "latest",
     "angular-flash": "latest",
-    "d3": "latest"
+    "d3": "latest",
+    "cal-heatmap": "latest"
   }
 }

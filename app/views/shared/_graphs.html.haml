@@ -1,6 +1,8 @@
 %li.pull-left.col-md-offset-1{'ng-controller' => 'MenuItemsController'}
   %span.dropdown{'on-toggle' => "toggled(open)" }
-    %a.dropdown-toggle{'href' => ''}= 'Graph'
-    %ul.dropdown-menu
+    %a.dropdown-toggle{'href' => ''}
+      %span= 'Graph'
+      %span.caret
+    %ul.dropdown-menu.graph-dd-menu
       %li{'ng-repeat' => 'item in data.items'}
         %a{'href' => '', 'ng-click' => "viewGraph(item.name)"} {{ item.name }}

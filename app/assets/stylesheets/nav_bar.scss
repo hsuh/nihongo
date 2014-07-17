@@ -1,0 +1,42 @@
+.nav-bar-container {
+  height: 30px;
+}
+
+.nav-bar {
+  list-style: none;
+  padding: 0;
+}
+
+.nav-bar > li:first-child {
+  line-height: 0px;
+  margin-left: 0px;
+}
+.nav-bar > li:last-child {
+  padding-top: 10px;
+}
+.nav-bar > li {
+  margin-left: 20px;
+}
+
+.nav-bar > li > a, .nav-bar > li > span > a {
+   cursor: pointer;
+   border-bottom: 1px solid #ddd;
+   float: left;
+   padding: 0 10px;
+   text-decoration: none;
+   line-height: 37px;
+}
+
+.nav-bar > li > a:hover, .nav-bar > li > span > a:hover {
+  border-bottom: 1px solid #09c;
+}
+
+.nav-bar .list-dd-menu {
+  left: -55px;
+  top: 53px;
+}
+
+.nav-bar .graph-dd-menu {
+  left: -70px;
+  top: 53px;
+}

@@ -1,0 +1,15 @@
+#new-note {
+  .form-group {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  input.form-control {
+    height: 26px;
+    padding: 0px;
+  }
+
+  button.btn-sm {
+    padding: 3px 10px;
+  }
+}

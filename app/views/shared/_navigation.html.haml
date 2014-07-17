@@ -3,10 +3,10 @@
   .col-md-6
     .nav-bar-container
       %ul.nav-bar
-        = render partial: "shared/search_form"
         %li.pull-left.col-md-offset-1{'ng-controller' => 'MenuItemsController'}
           %a{'href' => '', 'ng-click' => 'newNote()'}= "New Note"
         = render partial: "shared/lists"
         = render partial: "shared/graphs"
-        %li.pull-left.col-md-offset-1= 'Account'
+        /%li.pull-left.col-md-offset-1= 'Account'
+        = render partial: "shared/search_form"
   .col-md-3
