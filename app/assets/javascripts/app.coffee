@@ -5,6 +5,7 @@ nihongo = angular.module('nihongo', [
         'ngAnimate',
         'controllers',
         'directives',
+        'factories',
         'angular-flash.service',
         'angular-flash.flash-alert-directive',
         'ui.bootstrap'])
@@ -20,6 +21,14 @@ nihongo.config(['$routeProvider', 'flashProvider', ($routeProvider, flashProvide
        templateUrl: "notes.html"
        controller: "NotesController"
       )
+      .when('/stacks',
+       templateUrl: 'stacks.html'
+       controller: 'StacksController'
+      )
+      .when('/stacks/:stackId',
+        templateUrl: "stack.html"
+        controller: "StackController"
+      )
       .when('/notes/new',
         templateUrl: "form.html"
         controller: "NoteController"
@@ -28,12 +37,17 @@ nihongo.config(['$routeProvider', 'flashProvider', ($routeProvider, flashProvide
         templateUrl: "show.html"
         controller: "NoteController"
       )
+      .when('/tests',
+        templateUrl: "tests.html"
+        controller: "FooController"
+      )
       .when('/graphs/social',
         templateUrl: "social.html"
         controller: "SocialGraphController"
       )
 ])
 
+services    = angular.module('factories', [])
 controllers = angular.module('controllers', [])
 directives  = angular.module('directives', [])
 

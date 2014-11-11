@@ -1,0 +1,9 @@
+%aside.flash.row
+  %article.col-md-9.col-sm-12{ 'active-class' => "alert",
+    "flash-alert" => '',
+    "duration" => "0"} {{ flash.message }}
+%section.col-md-9
+  %article.panel.panel-info
+    %header.panel-heading
+      %h1{'ng-model' => 'data.current.question' } {{ data.current.question }}
+    %p.panel-body {{ data.foo }}

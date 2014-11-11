@@ -1,0 +1,10 @@
+%h1.h3= 'All Stacks'
+%div.flip-container
+  .flip-card{'ng-repeat' => 'stack in data.stacks'}
+    %div.card-inner
+      %h1.h3{'style' => 'margin-top: 0'}
+        %a{'href' => '', "ng-click" => "view(stack.id)"} {{ stack.title }}
+      %span {{stack.title}} </br>
+      %div{'ng-controller'=>'TestsController'}
+        %button.btn.btn-info{'ng-click' => "practise(stack.id)"}= 'Practise'
+        %button.btn.btn-danger{'ng-click' => "delete(note.id)"}= 'Delete'

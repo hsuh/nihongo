@@ -1,0 +1,14 @@
+%aside.flash.row
+  %article.col-md-9.col-sm-12{ 'active-class' => "alert",
+    "flash-alert" => '',
+    "duration" => "0"} {{ flash.message }}
+%section.col-md-9
+  %article.panel.panel-info
+    %header.panel-heading
+      %h1 {{ data.stack.title}}
+    %p.panel-body{'data-ng-repeat' => 'question in data.stack.questions'}
+      {{ question.template }}
+
+  %button.btn.btn-info{'ng-click' => "practise(stack.id)"}= 'Practise'
+  %button.btn.btn-default{ 'ng-click' => 'back()' }
+    &larr; Back

@@ -1,0 +1,1 @@
+json.(stack, :id, :title)
